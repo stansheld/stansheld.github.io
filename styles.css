@@ -140,6 +140,11 @@ a.textLink, a.textLink:visited {
     font-family: 'Montserrat', sans-serif;
 }
 
+.popup .content .contentLine .errorText {
+    color: red;
+    font-size: 12px;
+}
+
 .popup .content .contentLineInput {
     width: 95%;
     font-family: 'Montserrat', sans-serif;
