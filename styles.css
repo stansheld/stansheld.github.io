@@ -1,0 +1,174 @@
+.main {
+    margin: auto 100px;
+    height: auto;
+    min-width: 320px;
+    max-width: 1600px;
+    overflow: auto;
+}
+.pageHolder { 
+    overflow: auto; 
+    width: 100%; 
+}
+
+.newBlock {
+    background-image: url(https://img.pngio.com/free-png-plus-sign-transparent-plus-signpng-images-pluspng-plus-sign-transparent-background-512_512.png);
+    cursor: pointer;
+}
+
+.infoBlock {
+    position: relative;
+    width: 250px;  
+    height: 250px;
+    margin: 10px 10px 0 0;
+    border: solid 1px #ccc;
+    background-color: #ececec;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    float: left;
+}
+
+.innerBlock {
+    position: absolute;
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+.textBlock {
+    width: 240px;
+    padding: 5px;
+    bottom: 0;
+}
+
+.authorBlock {
+    padding: 2px;
+    top: 0;
+    right: 0;
+    font-size: 11px;
+}
+
+.dateBlock {
+    color: #c77d7d;
+    display: block;
+    font-size: 12px;
+}
+
+.descBlock {
+    display: none;
+    margin-top: 5px;
+    padding: 5px;
+    max-height: 105px;
+    overflow: hidden;
+    font-size: 14px;
+    border: 1px solid #afafaf;
+}
+
+.textLink {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+a.textLink, a.textLink:visited {
+    text-decoration: none;
+    color:inherit;
+}
+
+.infoBlock:hover .descBlock { 
+    display: block; 
+}
+
+.newBlockButton {
+    display: block;
+    height: 250px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 999;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.popup .content .contentLine {
+    margin-bottom: 10px;
+}
+
+.popup .content .contentLine label{
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup .content .contentLineInput {
+    width: 95%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup .content .contentLineInput:valid {
+    border: 1px solid black;
+}
+
+.popup .content .contentLineInput:invalid {
+    border: 1px solid red;
+}
+
+.popup .content a{
+    background-color: #868686;
+    color: white;
+    padding: 10px 27px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 27px;
+    line-height: 10px;
+    display: block;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 70%;
+    }
+}

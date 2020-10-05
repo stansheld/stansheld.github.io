@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NEWS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head> 
+<body>
+    <div class="main">
+        <div class="pageHolder"></div>
+        <div class="infoBlock newBlock">
+            <a class="newBlockButton" href="#popup"></a>
+        </div>
+    </div>
+
+    <div id="popup" class="overlay">
+        <div class="popup">
+            <h2>Add News</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <div class="contentLine">
+                    <label for="author">Author:</label><br>
+                    <input class="contentLineInput" type="text" id="aname" name="author">
+                </div>
+                <div class="contentLine">
+                    <label for="title">Title:</label><br>
+                    <input class="contentLineInput" type="text" id="tname" name="title" required>
+                </div>
+                <div class="contentLine">
+                    <label for="description">Description:</label><br>
+                    <input class="contentLineInput" type="text" id="dname" name="description" required>
+                </div>
+                <div class="contentLine">
+                    <label for="url">URL:</label><br>
+                    <input class="contentLineInput" type="text" id="uname" name="url" required>
+                </div>
+                <div class="contentLine">
+                    <label for="urlToImage">URL for image:</label><br>
+                    <input class="contentLineInput" type="text" id="iname" name="urlToImage" required>
+                </div>
+                <a id="addNews" href="javascript:void(0);">Add</a>
+        </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
