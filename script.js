@@ -55,6 +55,14 @@ function createBlock(ele) {
     return block;
 }
 
+function createErrorLabel(eleAfter) {
+    var errorLabel = document.createElement("label");
+    errorLabel.className = "errorText";
+    errorLabel.innerHTML = "Field can't be empty";
+
+    eleAfter.insertAdjacentElement("afterend",errorLabel);
+}
+
 readTextFile("news.json", function(text){
     var data;
     try {
@@ -98,9 +106,18 @@ document.querySelector("#addNews").addEventListener("click", function () {
         }
     });
 
+    document.querySelectorAll(".errorText").forEach(function(element) {
+        element.parentNode.removeChild(element);
+    });
+
     if (dataArray["title"] == null || dataArray["description"] == null || dataArray["url"] == null) {
-        console.warn("TITLE/DESCRIPTION/URL can't be empty");
-        return;
+        for (var element in dataArray) {
+            if (element !== "publishedAt" && element !== "author"
+                && element !=="urlToImage" && dataArray[element] == null) {
+                var afterInsertInput = document.querySelector("input[name=" + element + "]");
+                createErrorLabel(afterInsertInput);
+            }
+        }
     } else {
         var newDiv = createBlock(dataArray);
         var afterInsertDiv = document.querySelector(".newBlock");
@@ -110,7 +127,6 @@ document.querySelector("#addNews").addEventListener("click", function () {
             if (input.name !== "publishedAt") {
                 document.querySelector("input[name=" + input.name + "]").value = "";
             }
-
         });
         document.querySelector(".close").click();
     }
